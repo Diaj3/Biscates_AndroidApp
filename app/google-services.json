@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "728929373993",
+    "firebase_url": "https://biscates-15769.firebaseio.com",
+    "project_id": "biscates-15769",
+    "storage_bucket": "biscates-15769.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728929373993:android:fecaf49b5f38a627",
+        "android_client_info": {
+          "package_name": "com.example.biscates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728929373993-dl0ahq1fb5l953g5j1r53tbgmcjdtmdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.biscates",
+            "certificate_hash": "ac38b863c8b730987f4d981e3ef7af63af112c9c"
+          }
+        },
+        {
+          "client_id": "728929373993-k57obu1a14vg5b8h0md6r50vpu0c8gcv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQi8XI6Iz8rRfGLk8BiRQGz95QwOT-Idc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728929373993-k57obu1a14vg5b8h0md6r50vpu0c8gcv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
