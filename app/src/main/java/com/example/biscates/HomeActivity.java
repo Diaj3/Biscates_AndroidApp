@@ -1,14 +1,15 @@
 package com.example.biscates;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.biscates.models.Biscates;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,16 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
     static List<Biscates> biscates = new ArrayList<>();
 
+    FirebaseAuth firebaseAuth;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        Button logoutBtn = findViewById(R.id.logoutBtn);
 
         biscates.add(new Biscates("Biscate 1", 20.20, "Cortar a relva", "Aveiro"));
         biscates.add(new Biscates("Biscate 2", 21.20, "Cortar a juba", "Porto"));
@@ -28,6 +35,15 @@ public class HomeActivity extends AppCompatActivity {
         biscates.add(new Biscates("Biscate 5", 24.20, "Queimar o teto", "Viseu"));
 
         generateBiscatesComponent();
+
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            }
+        });
     }
 
     public void generateBiscatesComponent() {
@@ -39,6 +55,5 @@ public class HomeActivity extends AppCompatActivity {
             textView.setText(biscate.getName());
             linearLayout.addView(textView);
         }
-
     }
 }
