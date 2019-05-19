@@ -19,6 +19,8 @@ public class HomeActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
 
+    Button button;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
 
         generateBiscatesComponent();
 
+        button = (Button) findViewById(R.id.button_test);
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +47,15 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void generateBiscatesComponent() {
@@ -56,4 +68,5 @@ public class HomeActivity extends AppCompatActivity {
             linearLayout.addView(textView);
         }
     }
+
 }

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Biscates</string>
+    <array name="cidades">
+        <item>Aveiro</item>
+        <item>Viseu</item>
+        <item>Guarda</item>
+        <item>Bragança</item>
+        <item>Vila Real</item>
+        <item>Porto</item>
+        <item>Braga</item>
+        <item>Coimbra</item>
+        <item>Castelo Branco</item>
+        <item>Leiria</item>
+        <item>Santarém</item>
+        <item>Portalegre</item>
+        <item>Évora</item>
+        <item>Setubal</item>
+        <item>Lisboa</item>
+        <item>Beja</item>
+        <item>Faro</item>
+    </array>
 </resources>
