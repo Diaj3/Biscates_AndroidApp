@@ -8,37 +8,35 @@ import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.biscates.models.Biscates;
+
 public class ConfigsActivity extends AppCompatActivity {
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_activity_perfil);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_activity_biscates);
-                    return true;
-                case R.id.navigation_configuration:
-                    mTextMessage.setText(R.string.title_activity_configs);
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configs);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        // Navbar Navigation
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_profile:
+                        Intent intent = new Intent(ConfigsActivity.this, PerfilActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.navigation_dashboard:
+                        Intent intent2 = new Intent(ConfigsActivity.this, BiscatesActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.navigation_configuration:
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
 }
