@@ -19,4 +19,17 @@
         <item>Beja</item>
         <item>Faro</item>
     </array>
+
+    <array name="categorias">
+        <item>Animais</item>
+        <item>Transportes</item>
+        <item>Tarefas Domésticas</item>
+        <item>Escrita e Leitura</item>
+        <item>Bebé e Criança</item>
+        <item>Tecnologias</item>
+        <item>Culinária</item>
+        <item>Agricultura</item>
+        <item>Desporto</item>
+        <item>Equipamentos e Ferramentas</item>
+    </array>
 </resources>
