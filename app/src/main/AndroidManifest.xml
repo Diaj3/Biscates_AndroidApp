@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".PerfilActivity"
-            android:label="@string/title_activity_perfil"></activity>
+            android:label="@string/title_activity_perfil" />
         <activity
             android:name=".ConfigsActivity"
             android:label="@string/title_activity_configs" />

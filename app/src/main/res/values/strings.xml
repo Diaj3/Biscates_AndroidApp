@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Biscates</string>
+    <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_configs">Configurações</string>
+    <string name="title_activity_biscates">Biscates</string>
     <array name="cidades">
         <item>Aveiro</item>
         <item>Viseu</item>
