@@ -14,7 +14,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Realizar tarefa (20)"
+        android:text="Realizar tarefa (20€)"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
