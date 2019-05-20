@@ -59,9 +59,8 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textStyle="italic"
-                        tools:text="Bricolage" />
+                        android:text="Bricolage"
+                        android:textStyle="italic" />
 
                     <TextView
                         android:id="@+id/textView6"
@@ -103,8 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView"
-                        android:textStyle="italic"
-                        tools:text="Animais" />
+                        android:textStyle="italic" />
 
                     <TextView
                         android:id="@+id/textView21"
