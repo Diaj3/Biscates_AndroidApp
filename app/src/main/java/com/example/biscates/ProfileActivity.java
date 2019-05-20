@@ -23,6 +23,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+
         TextView logoutbtn = findViewById(R.id.end_session);
 
         Button registerBtn = findViewById(R.id.registerBtn);

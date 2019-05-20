@@ -5,14 +5,23 @@ public class Biscates {
     private Double price;
     private String description;
     private String location;
+    private String categoria;
 
-    public Biscates() {}
 
-    public Biscates(String name, Double price, String description, String location) {
+    public Biscates(String name, Double price, String description, String location, String categoria) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.location = location;
+        this.categoria = categoria;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getName() {
