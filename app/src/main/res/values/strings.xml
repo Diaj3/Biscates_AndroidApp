@@ -34,6 +34,7 @@
         <item>Agricultura</item>
         <item>Desporto</item>
         <item>Equipamentos e Ferramentas</item>
+        <item>Compras</item>
         <item>Outro</item>
     </array>
     <string name="title_activity_biscate1_exemplo">Biscate1Exemplo</string>
