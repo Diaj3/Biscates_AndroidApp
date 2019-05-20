@@ -29,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
         // Initialize the firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
 
+        try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+
         setContentView(R.layout.activity_registo);
 
         Button registerBtn = findViewById(R.id.registerBtn);
@@ -59,10 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
         String password = this.passField.getText().toString();
         String confirmPassword = this.confirmPassField.getText().toString();
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            Toast.makeText(this, "Todos os campos são obrigatórios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Preencha todos os campos, por favor.", Toast.LENGTH_SHORT).show();
             return false;
         } else if (!password.equals(confirmPassword)) {
-            Toast.makeText(this, "Password e Confirm Password têm de ser iguais", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "As Passwords não correspondem.", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (password.length() < 6 || confirmPassword.length() < 6){
+            Toast.makeText(this, "A Password tem de ter 6 caracteres no mínimo.", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -75,7 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                    Toast.makeText(RegisterActivity.this, "Utilizador criado.", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 } else {
                     Toast.makeText(RegisterActivity.this, "Erro a registar o utlizador", Toast.LENGTH_SHORT).show();
                     Log.w("tag", task.getException());

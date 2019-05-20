@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/perfil_icon"
+        android:title="Perfil" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Biscates" />
+
+    <item
+        android:id="@+id/navigation_configuration"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Configurações" />
+
+</menu>
