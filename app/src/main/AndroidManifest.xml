@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MeusBiscateActivity"
+            android:label="@string/title_activity_meus_biscate"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Biscate1Exemplo"
+            android:label="@string/title_activity_biscate1_exemplo" />
         <activity android:name=".NovoBiscateActivity" />
         <activity            android:name=".PerfilActivity"
             android:label="@string/title_activity_perfil" />
