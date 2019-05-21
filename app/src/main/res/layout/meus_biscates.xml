@@ -6,115 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/scrollview_biscates"
-        android:layout_width="match_parent"
-        android:layout_height="674dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:layout_editor_absoluteX="0dp">
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
-
-            <SearchView
-                android:id="@+id/searchView"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </SearchView>
-
-            <LinearLayout
-                android:id="@+id/biscate1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/border"
-                android:orientation="vertical"
-                android:padding="10dip"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/searchView">
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cortar Relva"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bricolage"
-                    android:textStyle="italic" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right|center_horizontal"
-                    android:text="Viseu" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bom dia, necessito de alguém para me cortar a relva que possua o material necessário para tal. O meu relvado tem 30 metros quadrados e face a experiência passadas, este deve demorar por volta de 45min a cortar. Se for possível regar os canteiros e podar minimamente os arbustos será pago extra (negociável claro). Caso seja necessário transporte eu posso ajudar. Devido aos meus horários, só é possível que tal seja feito durante a tarde, especialmente depois das 14:30. Para mais informações contacte 935896656." />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/biscate2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/border"
-                android:orientation="vertical"
-                android:padding="10dip"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/biscate1">
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fazer Compras"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Compras"
-                    android:textStyle="italic" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bom dia, necessito de alguém que me faça as compras semanalmente, a lista de compras é relativamente pequena logo faz-se facilmente em menos de 30min" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right|center_horizontal"
-                    android:text="Coimbra" />
-            </LinearLayout>
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+    <!-- https://camposha.info/course/android-listview/lesson/android-filter-listview-using-a-spinner-dropdown/ CHECK THIS-->
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/nav_view"
@@ -129,20 +21,26 @@
     </android.support.design.widget.BottomNavigationView>
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="201dp"
-        android:layout_height="50dp"
+        android:id="@+id/headerlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Meus Biscates"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="30sp"
+        android:fontFamily="casual"
+        android:text="Categorias"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <Button
         android:id="@+id/backButton"
@@ -152,7 +50,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="32dp"
         android:text="Voltar para Biscates"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
