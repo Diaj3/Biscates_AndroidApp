@@ -5,14 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.biscates.models.Biscates;
 
 public class BiscatesActivity extends AppCompatActivity {
     float x1, x2, y1, y2;
@@ -39,17 +33,5 @@ public class BiscatesActivity extends AppCompatActivity {
             }
         });
     }
-
-        configureNextButton();
-    }
-
-    private void configureNextButton(){
-        Button nextButton = (Button) findViewById(R.id.nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BiscatesActivity.this, MeusBiscateActivity.class));
-            }
-        });
-    }
 }
+
