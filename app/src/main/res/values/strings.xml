@@ -35,10 +35,12 @@
         <item>Desporto</item>
         <item>Equipamentos e Ferramentas</item>
         <item>Compras</item>
+        <item>Bricolage</item>
         <item>Outro</item>
     </array>
     <string name="title_activity_biscate1_exemplo">Biscate1Exemplo</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_meus_biscate">MeusBiscateActivity</string>
 </resources>
