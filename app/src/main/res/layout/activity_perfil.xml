@@ -18,73 +18,141 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/email-label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="96dp"
-                android:layout_marginLeft="96dp"
-                android:layout_marginTop="24dp"
-                android:text="Email"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="teste@teste.pt"
-                android:inputType="textEmailAddress"
+                android:id="@+id/namePerfil"
+                android:layout_width="230dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginRight="17dp"
+                android:gravity="center"
+                android:text="Teste User"
+                android:textSize="23dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email-label" />
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="TesteUser"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name-label" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3"
+                app:layout_constraintVertical_bias="0.455" />
 
             <TextView
-                android:id="@+id/name-label"
+                android:id="@+id/cidadePerfil"
+                android:layout_width="115dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Viseu"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/namePerfil"
+                app:layout_constraintHorizontal_bias="0.547"
+                app:layout_constraintStart_toStartOf="@+id/namePerfil"
+                app:layout_constraintTop_toBottomOf="@+id/namePerfil" />
+
+            <TextView
+                android:id="@+id/descript"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="92dp"
-                android:layout_marginLeft="92dp"
-                android:layout_marginTop="64dp"
-                android:text="Nome"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Descrição"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/descricaoPerfil"
+                app:layout_constraintTop_toBottomOf="@+id/score" />
+
+            <TextView
+                android:id="@+id/descricaoPerfil"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Descrição do perfil do test user."
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descript" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="42dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginLeft="52dp"
+                android:gravity="center"
+                android:text="4,6"
+                android:textSize="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="@+id/score"
+                app:layout_constraintStart_toEndOf="@+id/score"
+                app:layout_constraintTop_toTopOf="@+id/score"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <TextView
+                android:id="@+id/descript2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Biscates"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/listBiscates"
+                app:layout_constraintTop_toBottomOf="@+id/descricaoPerfil" />
+
+            <ListView
+                android:id="@+id/listBiscates"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descript2" />
 
             <TextView
                 android:id="@+id/end-session"
                 android:layout_width="171dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="200dp"
                 android:gravity="center|center_horizontal"
                 android:text="Terminar Sessão"
                 android:textColor="#F44336"
                 android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email" />
+                app:layout_constraintTop_toBottomOf="@+id/listBiscates" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="265dp"
-                android:layout_height="249dp"
-                android:layout_marginTop="64dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="144dp"
+                android:layout_height="161dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/instagram_profile_image" />
+                app:srcCompat="@drawable/def_user" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="59dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/settings_logo" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
@@ -99,6 +167,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bnv_tab_item_foreground"
+        app:itemTextColor="@color/bnv_tab_item_foreground"
+        />
 
 </android.support.constraint.ConstraintLayout>

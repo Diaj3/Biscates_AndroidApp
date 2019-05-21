@@ -9,21 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Biscate1Exemplo"
-            android:label="@string/title_activity_biscate1_exemplo"></activity>
         <activity android:name=".NovoBiscateActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity
-            android:name=".PerfilActivity"
+        <activity            android:name=".PerfilActivity"
             android:label="@string/title_activity_perfil" />
-        <activity
-            android:name=".ConfigsActivity"
-            android:label="@string/title_activity_configs" />
-        <activity
-            android:name=".BiscatesActivity"
+        <activity            android:name=".BiscatesActivity"
             android:label="@string/title_activity_biscates" />
-        <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
