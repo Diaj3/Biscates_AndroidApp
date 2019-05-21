@@ -22,22 +22,6 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp">
 
-                <Button
-                    android:id="@+id/nextButton"
-                    android:layout_width="229dp"
-                    android:layout_height="39dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="ir para Meus Biscates"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/biscate2" />
-
                 <SearchView
                     android:id="@+id/searchView"
                     android:layout_width="0dp"
@@ -58,6 +42,7 @@
                     android:background="@drawable/border"
                     android:orientation="vertical"
                     android:padding="10dip"
+                    app:backgroundTint="#4883E2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +52,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:text="Cortar Relva"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -75,6 +61,7 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:text="Bricolage"
                         android:textStyle="italic" />
 
@@ -82,12 +69,15 @@
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Bom dia, necessito de alguém para me cortar a relva que possua o material necessário para tal. O meu relvado tem 30 metros quadrados e face a experiência passadas, este deve demorar por volta de 45min a cortar. Se for possível regar os canteiros e podar minimamente os arbustos será pago extra (negociável claro). Caso seja necessário transporte eu posso ajudar. Devido aos meus horários, só é possível que tal seja feito durante a tarde, especialmente depois das 14:30. Para mais informações contacte 935896656." />
+                        android:fontFamily="@font/montserrat"
+                        android:text="Bom dia, necessito de alguém para me cortar a relva que possua o material necessário para tal. O meu relvado tem 30 metros quadrados e face a experiência passadas, este deve demorar por volta de 45min a cortar. Se for possível regar os canteiros e podar minimamente os arbustos será pago extra (negociável claro). Caso seja necessário transporte eu posso ajudar. Devido aos meus horários, só é possível que tal seja feito durante a tarde, especialmente depois das 14:30. Para mais informações contacte 935896656."
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:gravity="right|center_horizontal"
                         android:text="Viseu" />
                 </LinearLayout>
@@ -109,6 +99,7 @@
                         android:id="@+id/textView20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:text="Passear Cão"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -117,6 +108,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:text="Animais"
                         android:textStyle="italic" />
 
@@ -124,12 +116,15 @@
                         android:id="@+id/textView21"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Bom tarde, necessito de alguém para me passear o meu cão, é meigo e de pequeno porte. Preferia alguém com experiência e relacionado a animais" />
+                        android:fontFamily="@font/montserrat"
+                        android:text="Bom tarde, necessito de alguém para me passear o meu cão, é meigo e de pequeno porte. Preferia alguém com experiência e relacionado a animais"
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/textView22"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:gravity="right|center_horizontal"
                         android:text="Coimbra" />
 
@@ -161,11 +156,14 @@
         android:layout_marginEnd="7dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
+        app:backgroundTint="#4883e2"
         android:clickable="true"
         android:src="@drawable/plus_icon"
         app:fabCustomSize="60dp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="@color/colorPrimaryDark" />
+        app:rippleColor="@color/colorPrimaryDark"
+
+        />
 
 </android.support.constraint.ConstraintLayout>
