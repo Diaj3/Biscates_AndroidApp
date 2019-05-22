@@ -15,7 +15,6 @@
         <activity
             android:name=".Biscate1Exemplo"
             android:label="@string/title_activity_biscate1_exemplo" />
-        <activity android:name=".NovoBiscateActivity" />
         <activity
             android:name=".PerfilActivity"
             android:label="@string/title_activity_perfil" />

@@ -1,14 +1,20 @@
 package com.example.biscates;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NewBiscateActivity extends AppCompatActivity {
     @Override
@@ -16,6 +22,34 @@ public class NewBiscateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_biscate);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+
+        // Seta Retroceder
+        ImageView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
+            }
+        });
+
+        // Cancel Button
+        Button cancelButton = findViewById(R.id.cancel);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        // Publish button
+        Button publishButton = findViewById(R.id.publish);
+        publishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
+                Toast.makeText(NewBiscateActivity.this, "Biscate Publicado!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // NavBar
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -48,4 +82,27 @@ public class NewBiscateActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Tem a certeza que pretende cancelar?");
+        // alert.setMessage("Message");
+
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
+            }
+        });
+
+        alert.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+
+        alert.show();
+
+    }
 }
