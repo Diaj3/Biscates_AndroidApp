@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,7 +29,8 @@
                 android:layout_marginRight="17dp"
                 android:gravity="center"
                 android:text="Teste User"
-                android:textSize="23dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -109,8 +112,8 @@
 
             <ListView
                 android:id="@+id/listBiscates"
-                android:layout_width="341dp"
-                android:layout_height="wrap_content"
+                android:layout_width="317dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
