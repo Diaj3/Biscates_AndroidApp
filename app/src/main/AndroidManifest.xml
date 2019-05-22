@@ -10,12 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".NewBiscateActivity"
+            android:label="@string/title_activity_new_biscate"></activity>
+        <activity
             android:name=".Biscate1Exemplo"
             android:label="@string/title_activity_biscate1_exemplo" />
         <activity android:name=".NovoBiscateActivity" />
-        <activity            android:name=".PerfilActivity"
+        <activity
+            android:name=".PerfilActivity"
             android:label="@string/title_activity_perfil" />
-        <activity            android:name=".BiscatesActivity"
+        <activity
+            android:name=".BiscatesActivity"
             android:label="@string/title_activity_biscates" />
         <activity android:name=".MainActivity">
             <intent-filter>
