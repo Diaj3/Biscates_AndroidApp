@@ -8,10 +8,13 @@
     tools:context=".PerfilActivity">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="112dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,6 +30,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginEnd="17dp"
                 android:layout_marginRight="17dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Teste User"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -43,6 +47,7 @@
                 android:layout_width="115dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Viseu"
                 android:textSize="20dp"
@@ -56,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Descrição"
                 android:textColor="#000000"
@@ -69,6 +75,7 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Descrição do perfil do test user."
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,6 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Biscates"
                 android:textColor="#000000"
                 android:textSize="18sp"
@@ -112,28 +120,12 @@
 
             <ListView
                 android:id="@+id/listBiscates"
-                android:layout_width="317dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descript2" />
-
-            <TextView
-                android:id="@+id/end-session"
-                android:layout_width="171dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="200dp"
-                android:gravity="center|center_horizontal"
-                android:text="Terminar Sessão"
-                android:textColor="#F44336"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/listBiscates" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -141,7 +133,7 @@
                 android:layout_height="161dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="52dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/def_user" />
@@ -160,6 +152,20 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
+    <TextView
+        android:id="@+id/end-session"
+        android:layout_width="171dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center|center_horizontal"
+        android:text="Terminar Sessão"
+        android:textColor="#F44336"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
+        app:layout_constraintStart_toEndOf="@+id/scrollView3" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -167,12 +173,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/bnv_tab_item_foreground"
+        app:itemTextColor="@color/bnv_tab_item_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/bnv_tab_item_foreground"
-        app:itemTextColor="@color/bnv_tab_item_foreground"
-        />
+        app:menu="@menu/bottom_nav_menu" />
 
 </android.support.constraint.ConstraintLayout>
