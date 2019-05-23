@@ -42,7 +42,7 @@
                     android:background="@drawable/border"
                     android:orientation="vertical"
                     android:padding="10dip"
-                    app:backgroundTint="#4883E2"
+                    app:backgroundTint="#F52A62"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
