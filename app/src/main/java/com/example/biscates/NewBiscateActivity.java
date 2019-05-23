@@ -2,11 +2,14 @@ package com.example.biscates;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,11 +20,59 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewBiscateActivity extends AppCompatActivity {
+    TextView name;
+    TextView price;
+    TextView contact;
+    TextView description;
+    TextView cc;
+    TextView nameBiscate;
+    TextView cc2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_biscate);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+        name = findViewById(R.id.nameBiscate);
+        price = findViewById(R.id.price);
+        contact = findViewById(R.id.contact);
+        description = findViewById(R.id.description);
+        cc = findViewById(R.id.charCount);
+        nameBiscate = findViewById(R.id.nameBiscate);
+        cc2 = findViewById(R.id.charCount2);
+
+        // Live counter of words
+        description.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {          }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            // Change the color and text
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.length() < 30){
+                    cc.setTextColor(Color.parseColor("#ef4046"));
+                }
+                if(s.length() > 30){
+                   cc.setTextColor(Color.parseColor("#5fe873"));
+                }
+                cc.setText(String.valueOf(s.length())); }});
+            nameBiscate.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.length() > 40){
+                    cc2.setTextColor(Color.parseColor("#ef4046"));
+                }
+                if(s.length() < 40){
+                    cc2.setTextColor(Color.parseColor("#5fe873"));
+                }
+                cc2.setText(String.valueOf(40 - s.length() + "/40"));
+            }
+        });
 
         // Seta Retroceder
         ImageView backButton = findViewById(R.id.backButton);
@@ -46,63 +97,62 @@ public class NewBiscateActivity extends AppCompatActivity {
         publishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(checkFields()){
+
                 startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
                 Toast.makeText(NewBiscateActivity.this, "Biscate Publicado!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // NavBar
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_profile:
-                        Intent intent = new Intent(NewBiscateActivity.this, PerfilActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.navigation_dashboard:
-                        Intent intent2 = new Intent(NewBiscateActivity.this, BiscatesActivity.class);
-                        startActivity(intent2);
-                        break;
                 }
-                return false;
             }
         });
 
-        Spinner spinner_categorias = findViewById(R.id.spinner_categorias);
+        Spinner spinner1 = findViewById(R.id.spinner_categorias);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_categorias.setAdapter(adapter);
+        spinner1.setAdapter(adapter);
 
-        Spinner spinner_cidades = findViewById(R.id.spinnerCidades);
+        Spinner spinner2 = findViewById(R.id.spinnerCidades);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.cidades, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_cidades.setAdapter(adapter);
-
+        spinner2.setAdapter(adapter2);
     }
 
+    // CancelButton
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
         alert.setTitle("Tem a certeza que pretende cancelar?");
         // alert.setMessage("Message");
-
         alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
             }
         });
-
         alert.setNegativeButton("Cancel",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         dialog.dismiss();
                     }
                 });
-
         alert.show();
+    }
 
+    public boolean checkFields(){
+        if(name.length() == 0 || price.length() == 0 || contact.length() == 0 || description.length() == 0){
+            Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(name.length() < 3 || name.length() > 40){
+            Toast.makeText(this, "Por favor, insira um nome válido", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(contact.length() < 9){
+            Toast.makeText(this, "Por favor, insira um contacto válido.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(description.length() < 30){
+            Toast.makeText(this, "Por favor, insira uma descrição válida.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }

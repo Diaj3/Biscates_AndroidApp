@@ -60,7 +60,7 @@
                 android:id="@+id/descript"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="52dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Descrição"
@@ -68,7 +68,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/descricaoPerfil"
-                app:layout_constraintTop_toBottomOf="@+id/score" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
             <TextView
                 android:id="@+id/descricaoPerfil"
@@ -82,28 +82,6 @@
                 app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descript" />
-
-            <TextView
-                android:id="@+id/score"
-                android:layout_width="42dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="52dp"
-                android:layout_marginLeft="52dp"
-                android:gravity="center"
-                android:text="4,6"
-                android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
-                android:adjustViewBounds="true"
-                app:layout_constraintBottom_toBottomOf="@+id/score"
-                app:layout_constraintStart_toEndOf="@+id/score"
-                app:layout_constraintTop_toTopOf="@+id/score"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
 
             <TextView
                 android:id="@+id/descript2"
@@ -152,16 +130,18 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/end-session"
-        android:layout_width="171dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="12dp"
+    <Button
+        android:id="@+id/endSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/border"
         android:fontFamily="@font/montserrat"
-        android:gravity="center|center_horizontal"
         android:text="Terminar Sessão"
-        android:textColor="#F44336"
-        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:backgroundTint="#ef4046"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toStartOf="@+id/scrollView3"
         app:layout_constraintStart_toEndOf="@+id/scrollView3" />

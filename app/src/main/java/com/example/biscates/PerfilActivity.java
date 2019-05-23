@@ -1,8 +1,10 @@
 package com.example.biscates;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
@@ -44,12 +46,11 @@ public class PerfilActivity extends AppCompatActivity {
 
         // Logout
         firebaseAuth = FirebaseAuth.getInstance();
-        TextView logoutbtn = findViewById(R.id.end_session);
+        Button logoutbtn = findViewById(R.id.endSession);
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firebaseAuth.signOut();
-                startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+                onBackPressed();
             }
         });
     }
@@ -74,5 +75,27 @@ public class PerfilActivity extends AppCompatActivity {
                 break;
         }
         return false;
+    }
+
+    // CancelButton
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Tem a certeza que pretende terminar sessão?");
+        // alert.setMessage("Message");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+            }
+        });
+        alert.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+        alert.show();
+
     }
 }

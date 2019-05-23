@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 if(email.length() > 0 && password.length() > 0) {
                     loginWithUsernameAndPassword(email, password);
                 }else {
-                    Toast.makeText(MainActivity.this, "Preencha os campos, por favor.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Preencha todos os campos, por favor.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            System.out.println("Login feito com sucesso");
+                            System.out.println("Login feito com sucesso!");
                             user = fireBaseAuth.getCurrentUser();
                             navigateToHomeScreen();
                         } else {

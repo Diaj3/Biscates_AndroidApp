@@ -20,6 +20,7 @@ public class BiscatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biscates);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+
         // Add activity
         FloatingActionButton add_bisc = findViewById(R.id.plusButton);
         add_bisc.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +29,16 @@ public class BiscatesActivity extends AppCompatActivity {
                 startActivity(new Intent(BiscatesActivity.this, NewBiscateActivity.class));
             }
         });
+
+        // Go to Biscate with more information
+        Button goToButton = findViewById(R.id.goToButton);
+        goToButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BiscatesActivity.this, DisplayBiscateActivity.class));
+            }
+        });
+
         // NavBar
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
