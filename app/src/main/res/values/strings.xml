@@ -4,6 +4,7 @@
     <string name="title_activity_configs">Configurações</string>
     <string name="title_activity_biscates">Biscates</string>
     <array name="cidades">
+        <item>Por favor, selecione uma cidade...</item>
         <item>Aveiro</item>
         <item>Viseu</item>
         <item>Guarda</item>
@@ -24,6 +25,7 @@
     </array>
 
     <array name="categorias">
+        <item>Por favor, selecione uma categoria...</item>
         <item>Animais</item>
         <item>Transportes</item>
         <item>Tarefas Domésticas</item>
