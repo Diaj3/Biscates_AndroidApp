@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class PerfilActivity extends AppCompatActivity {
     float x1, x2, y1, y2;
+    BottomNavigationView navView;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -28,7 +29,7 @@ public class PerfilActivity extends AppCompatActivity {
         try {          this.getSupportActionBar().hide();        } catch (NullPointerException e) {        }
 
         // NavBar Navigation
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

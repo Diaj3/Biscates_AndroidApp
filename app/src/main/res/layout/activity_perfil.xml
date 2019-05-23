@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="112dp">
+        tools:layout_editor_absoluteY="-40dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,33 +24,43 @@
 
             <TextView
                 android:id="@+id/namePerfil"
-                android:layout_width="230dp"
-                android:layout_height="82dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginRight="17dp"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
-                android:gravity="center"
+                android:gravity="center|center_vertical"
                 android:text="Teste User"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#ffffff"
                 android:textSize="30dp"
+                android:textStyle="bold"
+                app:backgroundTint="#FFF52A62"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.846"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/imageView3"
-                app:layout_constraintVertical_bias="0.455" />
+                app:layout_constraintVertical_bias="0.321" />
 
             <TextView
                 android:id="@+id/cidadePerfil"
-                android:layout_width="115dp"
-                android:layout_height="23dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
+                android:padding="8dp"
                 android:text="Viseu"
-                android:textSize="20dp"
+
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:backgroundTint="#4883e2"
                 app:layout_constraintEnd_toEndOf="@+id/namePerfil"
                 app:layout_constraintHorizontal_bias="0.547"
                 app:layout_constraintStart_toStartOf="@+id/namePerfil"
@@ -60,7 +70,7 @@
                 android:id="@+id/descript"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Descrição"
@@ -72,10 +82,14 @@
 
             <TextView
                 android:id="@+id/descricaoPerfil"
-                android:layout_width="340dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
+                android:gravity="center_vertical"
                 android:text="Descrição do perfil do test user."
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Biscates"
+                android:text="Meus Biscates"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -98,9 +112,13 @@
 
             <ListView
                 android:id="@+id/listBiscates"
-                android:layout_width="341dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/montserrat"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descript2" />
@@ -111,21 +129,10 @@
                 android:layout_height="161dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/def_user" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="59dp"
-                android:layout_height="58dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/settings_logo" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
@@ -134,7 +141,7 @@
         android:id="@+id/endSession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/border"
         android:fontFamily="@font/montserrat"
         android:text="Terminar Sessão"
@@ -144,6 +151,7 @@
         app:backgroundTint="#ef4046"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toStartOf="@+id/scrollView3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/scrollView3" />
 
     <android.support.design.widget.BottomNavigationView
