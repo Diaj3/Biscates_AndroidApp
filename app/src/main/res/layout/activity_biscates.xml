@@ -22,15 +22,40 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp">
 
+                <TextView
+                    android:id="@+id/BiscatesDisp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center|center_vertical"
+                    android:text="Biscates Disponíveis"
+                    android:textColor="#ffffff"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#FFF52A62"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.689"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <SearchView
                     android:id="@+id/searchView"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/montserrat"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_bias="0.444"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/BiscatesDisp">
 
                 </SearchView>
 
@@ -38,10 +63,25 @@
                     android:id="@+id/goToButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="92dp"
                     android:text="Button"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.487"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchView" />
             </android.support.constraint.ConstraintLayout>
