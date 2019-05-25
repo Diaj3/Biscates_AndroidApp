@@ -26,10 +26,7 @@
                 android:id="@+id/namePerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="44dp"
-                android:layout_marginRight="44dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_vertical"
@@ -39,12 +36,9 @@
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:backgroundTint="#FFF52A62"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.846"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/imageView3"
-                app:layout_constraintVertical_bias="0.321" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
             <TextView
                 android:id="@+id/cidadePerfil"
@@ -55,22 +49,22 @@
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Viseu"
 
+                android:text="Viseu"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:backgroundTint="#4883e2"
-                app:layout_constraintEnd_toEndOf="@+id/namePerfil"
-                app:layout_constraintHorizontal_bias="0.547"
-                app:layout_constraintStart_toStartOf="@+id/namePerfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/namePerfil" />
 
             <TextView
                 android:id="@+id/descript"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:text="Descrição"
@@ -78,7 +72,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/descricaoPerfil"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/cidadePerfil" />
 
             <TextView
                 android:id="@+id/descricaoPerfil"
@@ -114,9 +108,9 @@
                 android:id="@+id/imageView3"
                 android:layout_width="144dp"
                 android:layout_height="161dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/def_user" />

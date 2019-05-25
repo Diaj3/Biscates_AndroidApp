@@ -19,10 +19,12 @@
 
             <EditText
                 android:id="@+id/registerConfirmPassword"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
 
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/montserrat"
@@ -36,10 +38,12 @@
 
             <EditText
                 android:id="@+id/registerName"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
 
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/montserrat"
@@ -54,10 +58,8 @@
                 android:id="@+id/registerBtn"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="72dp"
-                android:layout_marginEnd="68dp"
-                android:layout_marginRight="68dp"
 
+                android:layout_marginTop="68dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_horizontal"
@@ -67,14 +69,18 @@
                 android:textStyle="bold"
                 app:backgroundTint="#4883e2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cancel"
                 app:layout_constraintTop_toBottomOf="@+id/registerConfirmPassword" />
 
             <EditText
                 android:id="@+id/registerEmail"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
 
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/montserrat"
@@ -87,10 +93,12 @@
 
             <EditText
                 android:id="@+id/registerPassword"
-                android:layout_width="327dp"
+                android:layout_width="0dp"
 
-                android:layout_height="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
                 android:ems="10"
                 android:fontFamily="@font/montserrat"
@@ -104,7 +112,7 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="410dp"
+                android:layout_width="0dp"
                 android:layout_height="320dp"
                 android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,9 +125,7 @@
                 android:id="@+id/cancel"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginLeft="68dp"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="68dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:text="Cancelar"
@@ -127,6 +133,8 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:backgroundTint="#ef4046"
+                app:layout_constraintEnd_toStartOf="@+id/registerBtn"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registerConfirmPassword" />
 
