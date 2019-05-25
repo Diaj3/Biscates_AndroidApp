@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="-40dp">
 
@@ -31,6 +31,7 @@
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_vertical"
                 android:text="NomePerfil"
+                android:text="Test User"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
@@ -44,13 +45,19 @@
                 android:id="@+id/cidadePerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+
+                android:layout_marginRight="8dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="8dp"
 
                 android:text="Cidade"
+                android:text="Viseu"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -82,6 +89,7 @@
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.039"
                 app:srcCompat="@drawable/def_user" />
 
             <android.support.v7.widget.RecyclerView

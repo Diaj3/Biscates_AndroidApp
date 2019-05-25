@@ -90,12 +90,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registerUserAndNavigateToHome() {
 //        this.user = new User( spinnercidades.getSelectedItem().toString(), nameField.getText().toString());
+        final String name  = nameField.getText().toString();
         String email = emailField.getText().toString();
         String password = passField.getText().toString();
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
+                    //getting the username test
+                    Intent intent = new Intent(getBaseContext(), PerfilActivity.class);
+                    intent.putExtra("Name", name);
+                    startActivity(intent);
+
                     Toast.makeText(RegisterActivity.this, "Utilizador criado.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 } else {
