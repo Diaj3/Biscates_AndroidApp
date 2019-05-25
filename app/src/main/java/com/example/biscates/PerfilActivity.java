@@ -21,23 +21,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import org.w3c.dom.Text;
 
 public class PerfilActivity extends AppCompatActivity {
-    User user;
     float x1, x2, y1, y2;
     BottomNavigationView navView;
     FirebaseAuth firebaseAuth;
-    String name = getIntent().getStringExtra("name");
-    TextView namePerfil = (TextView)findViewById(R.id.namePerfil);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         try {this.getSupportActionBar().hide();} catch (NullPointerException e) {        }
-
-//        String name = this.user.getName();
-//        String location = this.user.getLocation();
-//        namePerfil.setText(name);
-//        locationPerfil.setText(location);
 
         // NavBar Navigation
         navView = findViewById(R.id.nav_view);
@@ -55,9 +47,6 @@ public class PerfilActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        //testing the username
-        namePerfil.setText(name);
 
         // Logout
         firebaseAuth = FirebaseAuth.getInstance();

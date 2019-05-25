@@ -31,7 +31,6 @@
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_vertical"
                 android:text="NomePerfil"
-                android:text="Test User"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
@@ -57,7 +56,6 @@
                 android:padding="8dp"
 
                 android:text="Cidade"
-                android:text="Viseu"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold"

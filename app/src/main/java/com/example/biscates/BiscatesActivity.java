@@ -1,11 +1,14 @@
 package com.example.biscates;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.biscates.models.Biscates;
@@ -56,5 +59,22 @@ public class BiscatesActivity extends AppCompatActivity {
                 startActivity(new Intent(BiscatesActivity.this, NewBiscateActivity.class));
             }
         });
+
+        // NavBar
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_profile:
+                        Intent intent = new Intent(BiscatesActivity.this, PerfilActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.navigation_dashboard:
+                        break;                }
+                return false;
+            }
+        });
+
     }
 }
