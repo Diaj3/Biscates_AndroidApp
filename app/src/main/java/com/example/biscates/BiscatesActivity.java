@@ -19,6 +19,7 @@ public class BiscatesActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private  ArrayList<Biscates> bList = new ArrayList<>();
 
     private FloatingActionButton plusButton;
 
@@ -27,18 +28,8 @@ public class BiscatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biscates);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
-
-        ArrayList<Biscates> bList = new ArrayList<>();
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "biscate1", "Viseu", 38.0, "Isto é uma descrição","967636092", "Animais")));
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "biscate1", "Viseu", 38.0, "Isto é uma descrição","967636092", "Animais")));
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "biscate1", "Viseu", 38.0, "Isto é uma descrição","967636092", "Animais")));
-
-        mRecyclerView = findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new BiscatesAdapter(bList);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+//        createBiscatesList();
+        buildRecyclerview();
 
         // Hide plus Button
         plusButton = findViewById(R.id.plusButton);
@@ -75,6 +66,33 @@ public class BiscatesActivity extends AppCompatActivity {
                 return false;
             }
         });
+        insertItem();
+    }
+
+    private void buildRecyclerview() {
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new BiscatesAdapter(bList);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+//    private void createBiscatesList() {bList.add((new Biscates(R.drawable.ic_menu_camera, "biscate1", "Viseu", 38.0, "Isto é uma descrição","967636092", "Animais"))); }
+
+    public void insertItem() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name =extras.getString("name");
+            String location =extras.getString("location");
+            Double price = extras.getDouble("price");
+            String description= extras.getString("description");
+            String cellphone = extras.getString("phone");
+            String categoria = extras.getString("categoria");
+
+            bList.add(new Biscates(R.drawable.ic_menu_camera, name, location, price, description, cellphone, categoria));
+            mAdapter.notifyItemInserted(bList.size());
+        }
 
     }
 }

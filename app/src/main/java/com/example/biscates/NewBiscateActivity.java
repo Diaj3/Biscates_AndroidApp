@@ -25,7 +25,6 @@ public class NewBiscateActivity extends AppCompatActivity {
     TextView contact;
     TextView description;
     TextView cc;
-    TextView nameBiscate;
     TextView cc2;
 
     @Override
@@ -38,7 +37,6 @@ public class NewBiscateActivity extends AppCompatActivity {
         contact = findViewById(R.id.contact);
         description = findViewById(R.id.description);
         cc = findViewById(R.id.charCount);
-        nameBiscate = findViewById(R.id.nameBiscate);
         cc2 = findViewById(R.id.charCount2);
 
         // Publish button
@@ -70,14 +68,14 @@ public class NewBiscateActivity extends AppCompatActivity {
             // Change the color and text
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.length() < 30){
+                if(s.length() < 20){
                     cc.setTextColor(Color.parseColor("#ef4046"));
                 }
-                if(s.length() > 30){
+                if(s.length() > 20){
                     cc.setTextColor(Color.parseColor("#5fe873"));
                 }
                 cc.setText(String.valueOf(s.length())); }});
-        nameBiscate.addTextChangedListener(new TextWatcher() {
+        name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {            }
             @Override
@@ -156,9 +154,16 @@ public class NewBiscateActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor, insira um contacto válido.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(description.length() < 30){
+        if(description.length() < 20){
             Toast.makeText(this, "Por favor, insira uma descrição válida.", Toast.LENGTH_SHORT).show();
             return false;
+        }
+        if (categorias.getSelectedItem().toString().equals("Por favor, selecione uma categoria...")){
+            Toast.makeText(this, "Por favor, selecione uma categoria.", Toast.LENGTH_SHORT).show();
+        }
+
+        if (cidades.getSelectedItem().toString().equals("Por favor, selecione uma cidade...")){
+            Toast.makeText(this, "Por favor, selecione uma cidade.", Toast.LENGTH_SHORT).show();
         }
         return true;
     }
