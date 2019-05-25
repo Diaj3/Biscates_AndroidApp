@@ -2,14 +2,13 @@ package com.example.biscates;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class DisplayBiscateActivity extends AppCompatActivity {
-
+public class DisplayBiscatesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ public class DisplayBiscateActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DisplayBiscateActivity.this, BiscatesActivity.class));
+                startActivity(new Intent(DisplayBiscatesActivity.this, BiscatesActivity.class));
             }
         });
 
@@ -38,4 +37,5 @@ public class DisplayBiscateActivity extends AppCompatActivity {
         });
 
     }
+
 }

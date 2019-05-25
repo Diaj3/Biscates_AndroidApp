@@ -15,18 +15,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.biscates.models.Biscates;
+import com.example.biscates.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.w3c.dom.Text;
+
 public class PerfilActivity extends AppCompatActivity {
+    User user;
     float x1, x2, y1, y2;
     BottomNavigationView navView;
     FirebaseAuth firebaseAuth;
+    TextView namePerfil;
+    TextView locationPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        try {          this.getSupportActionBar().hide();        } catch (NullPointerException e) {        }
+        try {this.getSupportActionBar().hide();} catch (NullPointerException e) {        }
+
+//        String name = this.user.getName();
+//        String location = this.user.getLocation();
+//        namePerfil.setText(name);
+//        locationPerfil.setText(location);
 
         // NavBar Navigation
         navView = findViewById(R.id.nav_view);
@@ -54,28 +65,6 @@ public class PerfilActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-    }
-
-    // Swipe
-    public boolean onTouchEvent(MotionEvent touchevent){
-        switch (touchevent.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                x1 = touchevent.getX();
-                y1 = touchevent.getY();
-                System.out.println(x1 + y1);
-                break;
-            case MotionEvent.ACTION_UP:
-                x2 = touchevent.getX();
-                y2 = touchevent.getY();
-                System.out.println(x2 + y2);
-                if(x1 > x2){
-                    System.out.println("devia arrastar");
-                    Intent i = new Intent(getApplicationContext(), Biscates.class);
-                    startActivity(i);
-                }
-                break;
-        }
-        return false;
     }
 
     // CancelButton

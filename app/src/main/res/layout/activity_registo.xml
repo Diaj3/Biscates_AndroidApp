@@ -42,7 +42,6 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/border"
                 android:ems="10"
@@ -53,6 +52,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <Spinner
+                android:id="@+id/spinnerCidadesRegisto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/montserrat"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerName" />
 
             <Button
                 android:id="@+id/registerBtn"
@@ -89,7 +103,7 @@
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registerName" />
+                app:layout_constraintTop_toBottomOf="@+id/spinnerCidadesRegisto" />
 
             <EditText
                 android:id="@+id/registerPassword"

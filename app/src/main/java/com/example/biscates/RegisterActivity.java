@@ -8,18 +8,22 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.biscates.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
+    User user;
     FirebaseAuth firebaseAuth;
-
+    Spinner spinnercidades;
     TextView nameField;
     TextView emailField;
     TextView passField;
@@ -30,21 +34,18 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Initialize the firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
-
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
-
         setContentView(R.layout.activity_registo);
 
         Button registerBtn = findViewById(R.id.registerBtn);
-
         this.nameField = findViewById(R.id.registerName);
-
         this.emailField = findViewById(R.id.registerEmail);
-
         this.passField = findViewById(R.id.registerPassword);
-
         this.confirmPassField = findViewById(R.id.registerConfirmPassword);
-
+        this.spinnercidades = findViewById(R.id.spinnerCidadesRegisto);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.cidades, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnercidades.setAdapter(adapter2);
 
         // On click regist jump to login page
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -80,11 +81,15 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (password.length() < 6 || confirmPassword.length() < 6){
             Toast.makeText(this, "A Password tem de ter 6 caracteres no mínimo.", Toast.LENGTH_SHORT).show();
             return false;
+        } else if (spinnercidades.getSelectedItem().toString().equals("Por favor, selecione uma cidade...")){
+            Toast.makeText(this, "Por favor, selecione uma cidade.", Toast.LENGTH_SHORT).show();
+            return false;
         }
         return true;
     }
 
     public void registerUserAndNavigateToHome() {
+//        this.user = new User( spinnercidades.getSelectedItem().toString(), nameField.getText().toString());
         String email = emailField.getText().toString();
         String password = passField.getText().toString();
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -94,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Utilizador criado.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Erro a registar o utlizador", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                     Log.w("tag", task.getException());
                 }
             }

@@ -4,13 +4,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewBiscateActivity extends AppCompatActivity {
+    BiscatesActivity biscatesActivity;
+    Spinner categorias;
+    Spinner cidades;
     TextView name;
     TextView price;
     TextView contact;
@@ -41,6 +41,26 @@ public class NewBiscateActivity extends AppCompatActivity {
         nameBiscate = findViewById(R.id.nameBiscate);
         cc2 = findViewById(R.id.charCount2);
 
+        // Publish button
+        Button publishButton = findViewById(R.id.publish);
+        publishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkFields()){
+                    //biscatesActivity.addBiscate(R.drawable.ic_menu_camera, "B2", "viseu", 38.0, "Isto é que é uma descrição", "967636092", "Categoria");
+                    Intent intent = new Intent(NewBiscateActivity.this, BiscatesActivity.class);
+                    intent.putExtra("name", name.getText().toString());
+                    intent.putExtra("location", cidades.getSelectedItem().toString());
+                    intent.putExtra("price", Double.parseDouble(price.getText().toString()));
+                    intent.putExtra("description", name.getText().toString());
+                    intent.putExtra("phone", contact.getText().toString());
+                    intent.putExtra("categoria", categorias.getSelectedItem().toString());
+                    startActivity(intent);
+                    Toast.makeText(NewBiscateActivity.this, "Biscate Publicado!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         // Live counter of words
         description.addTextChangedListener(new TextWatcher() {
             @Override
@@ -54,10 +74,10 @@ public class NewBiscateActivity extends AppCompatActivity {
                     cc.setTextColor(Color.parseColor("#ef4046"));
                 }
                 if(s.length() > 30){
-                   cc.setTextColor(Color.parseColor("#5fe873"));
+                    cc.setTextColor(Color.parseColor("#5fe873"));
                 }
                 cc.setText(String.valueOf(s.length())); }});
-            nameBiscate.addTextChangedListener(new TextWatcher() {
+        nameBiscate.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {            }
             @Override
@@ -92,28 +112,15 @@ public class NewBiscateActivity extends AppCompatActivity {
             }
         });
 
-        // Publish button
-        Button publishButton = findViewById(R.id.publish);
-        publishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(checkFields()){
-
-                startActivity(new Intent(NewBiscateActivity.this, BiscatesActivity.class));
-                Toast.makeText(NewBiscateActivity.this, "Biscate Publicado!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        Spinner spinner1 = findViewById(R.id.spinner_categorias);
+        categorias = findViewById(R.id.spinner_categorias);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter);
+        categorias.setAdapter(adapter);
 
-        Spinner spinner2 = findViewById(R.id.spinnerCidades);
+        cidades = findViewById(R.id.spinnerCidades);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.cidades, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
+        cidades.setAdapter(adapter2);
     }
 
     // CancelButton
@@ -155,4 +162,5 @@ public class NewBiscateActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }

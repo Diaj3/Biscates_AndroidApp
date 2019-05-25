@@ -30,7 +30,7 @@
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_vertical"
-                android:text="Teste User"
+                android:text="NomePerfil"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
@@ -50,7 +50,7 @@
                 android:gravity="center"
                 android:padding="8dp"
 
-                android:text="Viseu"
+                android:text="Cidade"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -61,48 +61,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/namePerfil" />
 
             <TextView
-                android:id="@+id/descript"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center"
-                android:text="Descrição"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/descricaoPerfil"
-                app:layout_constraintTop_toBottomOf="@+id/cidadePerfil" />
-
-            <TextView
-                android:id="@+id/descricaoPerfil"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/border"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center_vertical"
-                android:text="Descrição do perfil do test user."
-                android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.507"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descript" />
-
-            <TextView
                 android:id="@+id/descript2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Meus Biscates"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/recyclerView2"
-                app:layout_constraintTop_toBottomOf="@+id/descricaoPerfil" />
+                app:layout_constraintTop_toBottomOf="@+id/cidadePerfil" />
 
             <ImageView
                 android:id="@+id/imageView3"

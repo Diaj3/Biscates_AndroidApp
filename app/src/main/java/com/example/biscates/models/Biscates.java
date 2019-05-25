@@ -3,73 +3,49 @@ package com.example.biscates.models;
 import java.util.ArrayList;
 
 public class Biscates {
-    private static int id = 0;
+    private int mImageResource;
     private String name;
+    private String location;
     private Double price;
     private String description;
-    private String location;
-    private String categoria;
     private String cellphone;
+    private String categoria;
 
-    public Biscates(String name, Double price, String description, String location, String categoria, String cellphone) {
+    public Biscates(int mImageResource, String name, String location, Double price, String description, String cellphone, String categoria) {
+        this.mImageResource = mImageResource;
         this.name = name;
+        this.location = location;
         this.price = price;
         this.description = description;
-        this.location = location;
-        this.categoria = categoria;
         this.cellphone = cellphone;
-        id++;
+        this.categoria = categoria;
     }
 
-    public static int getId() {
-        return id;
+    public int getmImageResource() {
+        return mImageResource;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLocation() {
+        return location;
     }
 
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 
     public String getCellphone() {
         return cellphone;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public String getCategoria() {
+        return categoria;
     }
 }
