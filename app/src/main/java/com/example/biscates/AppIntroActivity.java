@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
-import com.github.paolorotolo.appintro.model.SliderPage;
+import com.github.paolorotolo.appintro.model.SliderPage; //Caso use SliderPages
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
@@ -64,7 +64,6 @@ public class AppIntroActivity extends AppIntro {
         // NOTE: you will probably need to ask VIBRATE permission in Manifest.
         setVibrate(true);
         setVibrateIntensity(30); */
-
 
     }
 
