@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DisplayBiscatesActivity extends AppCompatActivity {
     @Override
@@ -24,6 +25,14 @@ public class DisplayBiscatesActivity extends AppCompatActivity {
             }
         });
 
+        TextView profile = findViewById(R.id.namePerson);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DisplayBiscatesActivity.this, SellerProfileActivity.class
+                ));
+            }
+        });
         // Call Button
         Button callButton = findViewById(R.id.callButton);
         callButton.setOnClickListener(new View.OnClickListener() {
