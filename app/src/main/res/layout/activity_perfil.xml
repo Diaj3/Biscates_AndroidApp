@@ -90,7 +90,7 @@
                 app:srcCompat="@drawable/def_user" />
 
             <Button
-                android:id="@+id/endSession"
+                android:id="@+id/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
@@ -114,7 +114,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="75dp"
                 android:fontFamily="@font/montserrat"
-                app:layout_constraintBottom_toTopOf="@+id/endSession"
+                app:layout_constraintBottom_toTopOf="@+id/message"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descript2"
                 app:layout_constraintVertical_bias="0.057">

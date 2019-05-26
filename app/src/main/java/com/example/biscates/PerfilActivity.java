@@ -10,17 +10,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.biscates.models.Biscates;
-import com.example.biscates.models.User;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -69,7 +63,7 @@ public class PerfilActivity extends AppCompatActivity {
         });
         // Logout
         firebaseAuth = FirebaseAuth.getInstance();
-        Button logoutbtn = findViewById(R.id.endSession);
+        Button logoutbtn = findViewById(R.id.message);
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
