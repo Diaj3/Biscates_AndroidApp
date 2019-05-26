@@ -29,7 +29,7 @@
                 android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center|center_vertical"
-                android:text="NomePerfil"
+                android:text="Test User"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
@@ -54,7 +54,7 @@
                 android:gravity="center"
                 android:padding="8dp"
 
-                android:text="Cidade"
+                android:text="Viseu"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -107,23 +107,32 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="286dp"
+                android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
 
                 android:layout_marginTop="8dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginBottom="75dp"
-                android:background="@drawable/border"
                 android:fontFamily="@font/montserrat"
                 app:layout_constraintBottom_toTopOf="@+id/endSession"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.551"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descript2"
                 app:layout_constraintVertical_bias="0.057">
 
             </android.support.v7.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/eraseButton"
+                android:layout_width="95dp"
+                android:layout_height="56dp"
+
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border"
+                android:text="Apagar"
+                app:layout_constraintStart_toEndOf="@+id/recyclerView2"
+                app:layout_constraintTop_toTopOf="@+id/recyclerView2" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

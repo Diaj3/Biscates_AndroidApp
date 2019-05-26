@@ -7,6 +7,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,17 +22,24 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class PerfilActivity extends AppCompatActivity {
     float x1, x2, y1, y2;
     BottomNavigationView navView;
     FirebaseAuth firebaseAuth;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<Biscates> bList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         try {this.getSupportActionBar().hide();} catch (NullPointerException e) {        }
-
+        createBiscatesList();
+        buildRecyclerview();
         // NavBar Navigation
         navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,6 +57,16 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
+        // Butao apagar
+        final Button eraseButton = findViewById(R.id.eraseButton);
+        eraseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bList.remove(0);
+                mAdapter.notifyDataSetChanged();
+                eraseButton.setVisibility(View.GONE);
+            }
+        });
         // Logout
         firebaseAuth = FirebaseAuth.getInstance();
         Button logoutbtn = findViewById(R.id.endSession);
@@ -57,6 +76,20 @@ public class PerfilActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        insertItem();
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name =extras.getString("name");
+            String location =extras.getString("location");
+            Double price = extras.getDouble("price");
+            String description= extras.getString("description");
+            String cellphone = extras.getString("phone");
+            String categoria = extras.getString("categoria");
+
+            bList.add(new Biscates(R.drawable.ic_menu_camera, name, location, price, description, cellphone, categoria));
+            mAdapter.notifyItemInserted(bList.size());
+        }
     }
 
     // CancelButton
@@ -80,4 +113,37 @@ public class PerfilActivity extends AppCompatActivity {
         alert.show();
 
     }
+    private void buildRecyclerview() {
+        mRecyclerView = findViewById(R.id.recyclerView2);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new BiscatesAdapter(bList);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void createBiscatesList() {
+        bList.add((new Biscates(R.drawable.ic_menu_camera, "Cortar Relva",
+            "Viseu", 25.0,
+            "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+            "999666333", "Tarefas Domésticas")));
+    }
+
+
+    public void insertItem() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name =extras.getString("name");
+            String location =extras.getString("location");
+            Double price = extras.getDouble("price");
+            String description= extras.getString("description");
+            String cellphone = extras.getString("phone");
+            String categoria = extras.getString("categoria");
+
+            bList.add(new Biscates(R.drawable.ic_menu_camera, name, location, price, description, cellphone, categoria));
+            mAdapter.notifyItemInserted(bList.size());
+        }
+
+    }
+
 }
