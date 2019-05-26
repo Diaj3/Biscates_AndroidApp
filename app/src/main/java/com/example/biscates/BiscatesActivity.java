@@ -28,7 +28,7 @@ public class BiscatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biscates);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
-//        createBiscatesList();
+        createBiscatesList();
         buildRecyclerview();
 
         // Hide plus Button
@@ -62,11 +62,21 @@ public class BiscatesActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.navigation_dashboard:
-                        break;                }
+                        Intent intent2 = new Intent(BiscatesActivity.this, DisplayBiscatesActivity.class);
+                        startActivity(intent2);
+                        break;
+                }
                 return false;
             }
         });
         insertItem();
+
+        mRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BiscatesActivity.this, DisplayBiscatesActivity.class));
+            }
+        });
     }
 
     private void buildRecyclerview() {
@@ -78,7 +88,20 @@ public class BiscatesActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-//    private void createBiscatesList() {bList.add((new Biscates(R.drawable.ic_menu_camera, "biscate1", "Viseu", 38.0, "Isto é uma descrição","967636092", "Animais"))); }
+    private void createBiscatesList() {
+        bList.add((new Biscates(R.drawable.ic_menu_camera, "Passear cão",
+                "Coimbra", 10.0,
+                "Preciso de alguém que me passeie o meu cão. É de porte pequeno, meigo e habituado a ser passeado.",
+                "888444222", "Animais")));
+        bList.add((new Biscates(R.drawable.ic_menu_camera, "Regar Jardim",
+                "Viseu", 15.0,
+                "Preciso de alguém que me regue o jardim. Tenho todos os materiais necessários. Jardim com cerca de 10m2",
+                "777555333", "Tarefas Domésticas")));
+        bList.add((new Biscates(R.drawable.ic_menu_camera, "Cortar Relva",
+                "Viseu", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Tarefas Domésticas")));
+    }
 
     public void insertItem() {
         Bundle extras = getIntent().getExtras();

@@ -31,7 +31,7 @@ public class DisplayBiscatesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent dialIntent = new Intent();
                 dialIntent.setAction(Intent.ACTION_DIAL);
-                dialIntent.setData(Uri.parse("tel:8675309"));
+                dialIntent.setData(Uri.parse("tel:987654321"));
                 startActivity(dialIntent);
             }
         });
