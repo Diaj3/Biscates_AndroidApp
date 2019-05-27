@@ -9,9 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.biscates.models.Biscates;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +39,8 @@ public class PerfilActivity extends AppCompatActivity {
         buildRecyclerview();
         // NavBar Navigation
         navView = findViewById(R.id.nav_view);
+        navView.setItemIconTintList(null);
+        navView.setSelectedItemId(R.id.navigation_profile);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -56,9 +61,32 @@ public class PerfilActivity extends AppCompatActivity {
         eraseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bList.remove(0);
-                mAdapter.notifyDataSetChanged();
-                eraseButton.setVisibility(View.GONE);
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(PerfilActivity.this);
+                builder1.setMessage("Eliminar Biscate?");
+                builder1.setCancelable(true);
+                builder1.setPositiveButton(
+                        "Eliminar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                bList.remove(0);
+                                mAdapter.notifyDataSetChanged();
+                                eraseButton.setVisibility(View.GONE);
+                                Toast.makeText(PerfilActivity.this, "Biscate apagado.", Toast.LENGTH_SHORT).show();
+                                dialog.cancel();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Não",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
             }
         });
         // Logout
@@ -81,7 +109,7 @@ public class PerfilActivity extends AppCompatActivity {
             String cellphone = extras.getString("phone");
             String categoria = extras.getString("categoria");
 
-            bList.add(new Biscates(R.drawable.ic_menu_camera, name, location, price, description, cellphone, categoria));
+            bList.add(new Biscates(R.drawable.ecology, name, location, price, description, cellphone, categoria));
             mAdapter.notifyItemInserted(bList.size());
         }
     }
@@ -117,7 +145,7 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     private void createBiscatesList() {
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "Cortar Relva",
+        bList.add((new Biscates(R.drawable.ecology, "Cortar Relva",
             "Viseu", 25.0,
             "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
             "999666333", "Tarefas Domésticas")));

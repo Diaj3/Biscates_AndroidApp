@@ -23,16 +23,16 @@ public class AppIntroActivity extends AppIntro {
         //setContentView(R.layout.activity_app_intro);
 
         addSlide(AppIntroFragment.newInstance("First Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
 
         addSlide(AppIntroFragment.newInstance("Second Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
+                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
 
         addSlide(AppIntroFragment.newInstance("Third Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent)));
+                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent)));
 
         addSlide(AppIntroFragment.newInstance("Fourth Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
 
 
 
