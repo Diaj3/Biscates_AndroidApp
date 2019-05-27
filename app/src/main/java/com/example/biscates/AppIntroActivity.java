@@ -22,17 +22,22 @@ public class AppIntroActivity extends AppIntro {
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
         //setContentView(R.layout.activity_app_intro);
 
-        addSlide(AppIntroFragment.newInstance("First Intro", "description",
-                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+        addSlide(AppIntroFragment.newInstance("Biscates", "Não é trabalho. É um Biscate",
+                R.drawable.logo_transparent, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
 
-        addSlide(AppIntroFragment.newInstance("Second Intro", "description",
-                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
+        addSlide(AppIntroFragment.newInstance("Lista de Biscates", "Podes consultar biscates publicados por outras pessoas.\nProcura um que te interesse e entra em contacto!",
+                R.drawable.lista_biscates, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
 
-        addSlide(AppIntroFragment.newInstance("Third Intro", "description",
-                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent)));
+        addSlide(AppIntroFragment.newInstance("Adiciona Biscates", "Podes publicar os teus biscate.\nPodes dar-lhe um nome, categoria, preço, entre outros!",
+                R.drawable.add_biscate, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
 
-        addSlide(AppIntroFragment.newInstance("Fourth Intro", "description",
-                R.drawable.user_def, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+        addSlide(AppIntroFragment.newInstance("Realiza Biscates", "Encontraste um biscate que te interessa?",
+                R.drawable.details_biscate, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+
+        addSlide(AppIntroFragment.newInstance("Entra em contacto!", "Entra em contacto com a pessoa e põe mãos à obra!",
+                R.drawable.contact_biscate, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
+
+
 
 
 
