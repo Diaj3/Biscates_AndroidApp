@@ -51,20 +51,32 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Email "
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/nameBiscate"
+                app:layout_constraintEnd_toEndOf="@+id/charCount2"
+                app:layout_constraintHorizontal_bias="0.023"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="203dp" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Enviar para:"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.012"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="132dp" />
 
             <EditText
