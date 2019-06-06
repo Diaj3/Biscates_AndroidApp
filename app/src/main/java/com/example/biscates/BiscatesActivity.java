@@ -99,10 +99,59 @@ public class BiscatesActivity extends AppCompatActivity {
                 "Viseu", 15.0,
                 "Preciso de alguém que me regue o jardim. Tenho todos os materiais necessários. Jardim com cerca de 10m2",
                 "777555333", "Tarefas Domésticas")));
+        bList.add((new Biscates(R.drawable.house, "Pintar Casa",
+                "Aveiro", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
         bList.add((new Biscates(R.drawable.ecology, "Cortar Relva",
                 "Viseu", 25.0,
                 "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
                 "999666333", "Tarefas Domésticas")));
+        bList.add((new Biscates(R.drawable.car, "Boleia até à Farmácia",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+
+        bList.add((new Biscates(R.drawable.pets, "Lavar cão",
+                "Guarda", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+        bList.add((new Biscates(R.drawable.ecology, "Cortar Roseira",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+        bList.add((new Biscates(R.drawable.car, "Necessito de boleia até Viseu",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+
+        bList.add((new Biscates(R.drawable.pets, "Cortar pêlo gato",
+                "Viseu", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+        bList.add((new Biscates(R.drawable.house, "Limpar Casa",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+
+        bList.add((new Biscates(R.drawable.pets, "Lavar cão",
+                "Guarda", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+        bList.add((new Biscates(R.drawable.ecology, "Cortar Roseira",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+        bList.add((new Biscates(R.drawable.car, "Boleia até Coimbra",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+
+        bList.add((new Biscates(R.drawable.house, "Montar secretária",
+                "Coimbra", 25.0,
+                "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
+                "999666333", "Animais")));
+
     }
 
     public void insertItem() {
