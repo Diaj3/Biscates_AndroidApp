@@ -21,21 +21,14 @@ public class AppIntroActivity extends AppIntro {
         super.onCreate(savedInstanceState);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
         //setContentView(R.layout.activity_app_intro);
+        addSlide(AppIntroFragment.newInstance("Procura Biscates", "Podes consultar biscates publicados por outras pessoas.\nProcura um que te interesse e entra em contacto!",
+                R.drawable.lista_biscates, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
 
-        addSlide(AppIntroFragment.newInstance("First Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
+        addSlide(AppIntroFragment.newInstance("Publica Biscates", "Podes publicar os teus biscate.\nPodes dar-lhe um nome, categoria, preço, entre outros!",
+                R.drawable.add_biscate, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
 
-        addSlide(AppIntroFragment.newInstance("Second Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark)));
-
-        addSlide(AppIntroFragment.newInstance("Third Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorAccent)));
-
-        addSlide(AppIntroFragment.newInstance("Fourth Intro", "description",
-                R.drawable.def_user, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
-
-
-
+        addSlide(AppIntroFragment.newInstance("Entra em contacto!", "Entra em contacto com a pessoa e põe mãos à obra!",
+                R.drawable.contact_biscate, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary)));
         // Note here that we DO NOT use setContentView();
 
         // Add your slide fragments here.

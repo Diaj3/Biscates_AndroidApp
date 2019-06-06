@@ -52,7 +52,9 @@ public class BiscatesActivity extends AppCompatActivity {
         });
 
         // NavBar
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        final BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setItemIconTintList(null);
+        navView.setSelectedItemId(R.id.navigation_dashboard);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -89,15 +91,15 @@ public class BiscatesActivity extends AppCompatActivity {
     }
 
     private void createBiscatesList() {
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "Passear cão",
+        bList.add((new Biscates(R.drawable.pets, "Passear cão",
                 "Coimbra", 10.0,
                 "Preciso de alguém que me passeie o meu cão. É de porte pequeno, meigo e habituado a ser passeado.",
                 "888444222", "Animais")));
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "Regar Jardim",
+        bList.add((new Biscates(R.drawable.ecology, "Regar Jardim",
                 "Viseu", 15.0,
                 "Preciso de alguém que me regue o jardim. Tenho todos os materiais necessários. Jardim com cerca de 10m2",
                 "777555333", "Tarefas Domésticas")));
-        bList.add((new Biscates(R.drawable.ic_menu_camera, "Cortar Relva",
+        bList.add((new Biscates(R.drawable.ecology, "Cortar Relva",
                 "Viseu", 25.0,
                 "Preciso de alguém que me corte a relva. É um jardim com cerca de 25m2. Mais informações contactar.",
                 "999666333", "Tarefas Domésticas")));
@@ -113,7 +115,7 @@ public class BiscatesActivity extends AppCompatActivity {
             String cellphone = extras.getString("phone");
             String categoria = extras.getString("categoria");
 
-            bList.add(new Biscates(R.drawable.ic_menu_camera, name, location, price, description, cellphone, categoria));
+            bList.add(new Biscates(R.drawable.car, name, location, price, description, cellphone, categoria));
             mAdapter.notifyItemInserted(bList.size());
         }
 

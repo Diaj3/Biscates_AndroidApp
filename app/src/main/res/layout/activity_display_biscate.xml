@@ -45,6 +45,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Categoria"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/categoriaDisp"
                 app:layout_constraintTop_toBottomOf="@+id/nameDisp" />
@@ -73,6 +74,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Localização"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView18"
                 app:layout_constraintTop_toBottomOf="@+id/categoriaDisp" />
@@ -103,6 +105,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Descrição"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/descriptDisp"
                 app:layout_constraintTop_toBottomOf="@+id/contactDisp" />
@@ -182,6 +185,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Contacto"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/contactDisp"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -212,6 +216,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Preço"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView23"
                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -233,6 +238,17 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/backButton2" />
+
+            <ImageView
+                android:id="@+id/star_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/star_before_click"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

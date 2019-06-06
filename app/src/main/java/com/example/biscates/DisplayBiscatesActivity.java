@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DisplayBiscatesActivity extends AppCompatActivity {
     @Override
@@ -15,6 +16,16 @@ public class DisplayBiscatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_biscate);
         try {this.getSupportActionBar().hide();} catch(NullPointerException e){}
+
+        // Fav Star
+        final ImageView star = findViewById(R.id.star_before);
+        star.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                star.setImageResource(R.drawable.star_after_click);
+                Toast.makeText(DisplayBiscatesActivity.this, "Biscate adicionado aos favoritos", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Seta Retroceder
         ImageView backButton = findViewById(R.id.backButton2);
@@ -25,7 +36,7 @@ public class DisplayBiscatesActivity extends AppCompatActivity {
             }
         });
 
-        TextView profile = findViewById(R.id.namePerson);
+        TextView profile = findViewById(R.id    .namePerson);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
